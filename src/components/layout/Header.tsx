@@ -6,8 +6,8 @@ import { APP_CONFIG } from '@/lib/constants';
 
 export function Header() {
   // TODO: Add NextAuth integration later
-  const session = null;
-  const status = 'unauthenticated';
+  const session = null as any;
+  const status: 'loading' | 'authenticated' | 'unauthenticated' = 'unauthenticated';
 
   return (
     <header className="bg-white shadow-sm border-b">
