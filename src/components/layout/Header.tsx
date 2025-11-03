@@ -89,7 +89,9 @@ export function Header() {
                 <Button
                   variant="ghost"
                   size="sm"
-                  onClick={() => signOut()}
+                  onClick={() => {
+                    // TODO: Add logout functionality
+                  }}
                 >
                   Logout
                 </Button>
