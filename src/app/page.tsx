@@ -66,8 +66,29 @@ export default function Home() {
   };
 
   const handleGeneratePDF = async () => {
-    // This will be implemented when we add PDF generation
-    alert('PDF generation will be implemented in next step');
+    if (!taxCalculation) {
+      alert('Please fill in all required fields to generate PDF');
+      return;
+    }
+
+    try {
+      const invoiceData: InvoiceData = {
+        business: formState.business,
+        client: formState.client,
+        invoice: formState.invoice,
+        items: formState.items.filter(item => item.name && item.quantity > 0),
+        tax: taxCalculation,
+      };
+
+      await generateInvoicePDF(invoiceData, {
+        template: 'classic',
+        showBranding: true,
+        filename: `${formState.invoice.invoiceNo.replace(/[^a-zA-Z0-9]/g, '_')}.pdf`
+      });
+    } catch (error) {
+      console.error('PDF generation error:', error);
+      alert('Failed to generate PDF. Please try again.');
+    }
   };
 
   const handleSaveInvoice = async () => {
