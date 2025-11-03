@@ -81,11 +81,9 @@ export function Header() {
                 <span className="text-sm text-gray-700">
                   {session.user?.email}
                 </span>
-                <Link href="/dashboard">
-                  <Button variant="secondary" size="sm">
-                    Dashboard
-                  </Button>
-                </Link>
+                <Button variant="secondary" size="sm" disabled>
+                  Dashboard (Coming Soon)
+                </Button>
                 <Button
                   variant="ghost"
                   size="sm"
