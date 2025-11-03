@@ -1,12 +1,13 @@
 'use client';
 
 import Link from 'next/link';
-import { useSession, signOut } from 'next-auth/react';
 import { Button } from '@/components/ui/Button';
 import { APP_CONFIG } from '@/lib/constants';
 
 export function Header() {
-  const { data: session, status } = useSession();
+  // TODO: Add NextAuth integration later
+  const session = null;
+  const status = 'unauthenticated';
 
   return (
     <header className="bg-white shadow-sm border-b">
