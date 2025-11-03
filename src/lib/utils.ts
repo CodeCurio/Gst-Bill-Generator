@@ -75,6 +75,13 @@ export function fileToBase64(file: File): Promise<string> {
 }
 
 /**
+ * Calculate item amount (re-export from gst-calculator)
+ */
+export function calculateItemAmount(quantity: number, rate: number): number {
+  return Math.round(quantity * rate * 100) / 100;
+}
+
+/**
  * Validate file type and size
  */
 export function validateFile(
