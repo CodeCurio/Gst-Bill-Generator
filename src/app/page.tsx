@@ -8,8 +8,9 @@ import { ItemsTable } from '@/components/invoice/ItemsTable';
 import { TaxCalculationDisplay } from '@/components/invoice/TaxCalculationDisplay';
 import { InvoicePreview } from '@/components/invoice/InvoicePreview';
 import { Button } from '@/components/ui/Button';
-import { InvoiceFormState } from '@/types';
+import { InvoiceFormState, InvoiceData } from '@/types';
 import { calculateGSTTax, generateInvoiceNumber } from '@/lib/gst-calculator';
+import { generateInvoicePDF } from '@/lib/pdf';
 import { APP_CONFIG } from '@/lib/constants';
 
 export default function Home() {
